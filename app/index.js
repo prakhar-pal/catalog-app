@@ -1,12 +1,13 @@
 const path = require('path');
-const { impress, assetMiddleware } = require("../lib/index");
+const impress = require("../lib/index");
 const app = impress();
+
+app.use(impress.static(path.join(__dirname, 'public')));
 
 app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "public", "404.html"));
 });
 
-app.use(assetMiddleware(path.join(__dirname, 'public')));
 
 const PORT = process.env.PORT || 8080;
 try {
