@@ -1,5 +1,8 @@
+require('dotenv').config()
 const path = require('path');
 const impress = require("../lib/index");
+require('./dbSetup');
+
 const app = impress();
 
 app.use(impress.static(path.join(__dirname, 'public')));
