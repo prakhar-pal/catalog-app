@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app/index.js",
-    "start:express": "USE_EXPRESS=1 npm start"
+    "start": "USE_EXPRESS=1 nodemon app/index.js",
+    "start:impress": "npm start"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +13,7 @@
   "devDependencies": {
     "dotenv": "^16.4.4",
     "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
     "nodemon": "^3.0.3"
   },
   "dependencies": {

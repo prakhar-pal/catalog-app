@@ -12,4 +12,5 @@ connect().then(() => {
 })
 .catch((err) => {
     console.log('DB failed to connect', err);
+    process.exit();
 })
