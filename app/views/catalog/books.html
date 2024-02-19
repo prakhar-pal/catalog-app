@@ -6,6 +6,28 @@
     <title>Document</title>
 </head>
 <body>
-    Hello Books!
+    <h1>Here are all available books</h1>
+    <table>
+        <thead>
+            <th>
+                <td>Title</td>
+                <td>Author</td>
+                <td></td>
+            </th>
+        </thead>
+        <tbody>
+            {% for book in books %}
+                <tr>
+                    <td>
+                        {{ book.title }}
+                    </td>
+                    <td>
+                        {{ book.author.firstName }}
+                        {{ book.author.lastName }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </body>
 </html>
