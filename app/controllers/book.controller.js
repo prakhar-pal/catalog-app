@@ -5,7 +5,7 @@ import { assert } from '../utils.js';
 
 async function getBooks(req, res) {
     const books = await Book.find().populate('author').exec();
-    return res.render('catalog/books.html', { books });
+    return res.render('catalog/books', { books });
 }
 
 

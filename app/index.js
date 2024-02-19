@@ -10,9 +10,7 @@ const { dirname, } = getCurrentModuleDetails(import.meta);
 
 const app = impress();
 nunjucks.configure(path.join(dirname, 'views'), { autoescape: true, express: app });
-app.set('view engine', 'html');
-
-console.log(app.get('views'));
+app.set('view engine', 'njk');
 
 app.use(impress.static(path.join(dirname, 'public')));
 app.use('/catalog', catalogRouter);
