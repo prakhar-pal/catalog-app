@@ -1,6 +1,6 @@
-const express = require('express');
-const asyncHandler = require('express-async-handler');
-const bookController = require('../controllers/book.controller');
+import express from'express';
+import asyncHandler from'express-async-handler';
+import bookController from'../controllers/book.controller.js';
 
 const Router = express.Router;
 const router = Router();
@@ -25,4 +25,4 @@ router.post('/bookInstance');
 router.get('/bookInstance/:bookInstanceId');
 router.delete('/bookInstance/:bookInstanceId');
 
-module.exports = router;
+export default router;

@@ -1,5 +1,5 @@
 // https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/mongoose
-const mongoose = require("mongoose");
+import mongoose from 'mongoose';
 
 const Schema = mongoose.Schema;
 
@@ -22,4 +22,4 @@ BookInstanceSchema.virtual("url").get(function () {
 });
 
 // Export model
-module.exports = mongoose.model("BookInstance", BookInstanceSchema);
+export default mongoose.model("BookInstance", BookInstanceSchema);

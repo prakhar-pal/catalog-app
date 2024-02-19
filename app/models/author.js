@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 const AuthorSchema = new Schema({
     firstName: {
@@ -25,4 +25,4 @@ Author.schema.virtual('name').get(function() {
     return this.firstName;
 })
 
-module.exports = Author;
+export default Author;

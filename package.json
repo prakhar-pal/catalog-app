@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "USE_EXPRESS=1 nodemon app/index.js",
     "start:impress": "npm start"

@@ -1,21 +1,24 @@
-require('dotenv').config()
-const path = require('path');
-const nunjucks = require('nunjucks');
-const impress = require("../lib/index");
-const catalogRouter = require('./routes/catalog');
-require('./dbSetup');
+import 'dotenv/config.js'
+import path from 'node:path';
+import nunjucks from 'nunjucks';
+import impress from '../lib/index.js';
+import catalogRouter from './routes/catalog.js';
+import { getCurrentModuleDetails } from './utils.js';
+import './dbSetup.js';
+
+const { dirname, } = getCurrentModuleDetails(import.meta);
 
 const app = impress();
-nunjucks.configure(path.join(__dirname, 'views'), { autoescape: true, express: app });
+nunjucks.configure(path.join(dirname, 'views'), { autoescape: true, express: app });
 app.set('view engine', 'html');
 
 console.log(app.get('views'));
 
-app.use(impress.static(path.join(__dirname, 'public')));
+app.use(impress.static(path.join(dirname, 'public')));
 app.use('/catalog', catalogRouter);
 
 app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "public", "404.html"));
+  res.sendFile(path.join(dirname, "public", "404.html"));
 });
 
 

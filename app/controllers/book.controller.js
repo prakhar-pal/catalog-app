@@ -1,12 +1,10 @@
-const njs = require('nunjucks');
-const path = require('path');
-const Book = require('../models/Book');
-const { assert } = require('../utils');
+import { Book } from '../models/index.js';
+import { assert } from '../utils.js';
 
 // @todo - implement the controllers
 
 async function getBooks(req, res) {
-    const books = await Book.find().exec();
+    const books = await Book.find().populate('author').exec();
     return res.render('catalog/books.html', { books });
 }
 
@@ -34,7 +32,7 @@ function deleteBook() {
 
 }
 
-module.exports = {
+export default {
     getBooks,
     getBook,
     createBook,

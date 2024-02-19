@@ -1,3 +1,5 @@
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 function assert(param, message) {
     if(param && Array.isArray(param)) {
         param.map(p => {
@@ -10,6 +12,21 @@ function assert(param, message) {
     }
 }
 
-module.exports = {
-    assert
+/**
+ * @method getCurrentModuleDetails - equivalent to __dirname, __filename in
+ */
+function getCurrentModuleDetails(meta) {
+    const filename = fileURLToPath(meta.url);
+    const dirname = path.dirname(filename);
+    console.log({ filename, dirname });
+    return {
+        dirname,
+        filename
+    };
+}
+
+
+export {
+    assert,
+    getCurrentModuleDetails
 }
