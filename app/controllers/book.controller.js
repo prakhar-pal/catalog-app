@@ -1,3 +1,5 @@
+const njs = require('nunjucks');
+const path = require('path');
 const Book = require('../models/Book');
 const { assert } = require('../utils');
 
@@ -5,7 +7,7 @@ const { assert } = require('../utils');
 
 async function getBooks(req, res) {
     const books = await Book.find().exec();
-    return res.json(books);
+    return res.render('catalog/books.html', { books });
 }
 
 

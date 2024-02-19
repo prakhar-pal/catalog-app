@@ -1,10 +1,15 @@
 require('dotenv').config()
 const path = require('path');
+const nunjucks = require('nunjucks');
 const impress = require("../lib/index");
 const catalogRouter = require('./routes/catalog');
 require('./dbSetup');
 
 const app = impress();
+nunjucks.configure(path.join(__dirname, 'views'), { autoescape: true, express: app });
+app.set('view engine', 'html');
+
+console.log(app.get('views'));
 
 app.use(impress.static(path.join(__dirname, 'public')));
 app.use('/catalog', catalogRouter);
