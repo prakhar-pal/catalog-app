@@ -4,18 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/books.css" />
 </head>
 <body>
-    <h1>Here are all available books</h1>
-    <table>
-        <thead>
-            <th>
-                <td>Title</td>
-                <td>Author</td>
-                <td></td>
-            </th>
-        </thead>
-        <tbody>
+    <main class='books-app'>
+        <h1>Here are all available books</h1>
+        <table class='books-table'>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+            </tr>
             {% for book in books %}
                 <tr>
                     <td>
@@ -27,7 +25,7 @@
                     </td>
                 </tr>
             {% endfor %}
-        </tbody>
-    </table>
+        </table>
+    </main>
 </body>
 </html>

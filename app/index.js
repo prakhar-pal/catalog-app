@@ -13,6 +13,10 @@ nunjucks.configure(path.join(dirname, 'views'), { autoescape: true, express: app
 app.set('view engine', 'njk');
 
 app.use(impress.static(path.join(dirname, 'public')));
+app.use('/css', (req, res, next) => {
+  res.setHeader('content-type', 'text/css');
+  return impress.static(path.join(dirname, 'public/css'))(req, res, next);
+});
 app.use('/catalog', catalogRouter);
 
 app.get("*", function (req, res) {

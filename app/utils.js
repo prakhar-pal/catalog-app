@@ -18,7 +18,6 @@ function assert(param, message) {
 function getCurrentModuleDetails(meta) {
     const filename = fileURLToPath(meta.url);
     const dirname = path.dirname(filename);
-    console.log({ filename, dirname });
     return {
         dirname,
         filename
