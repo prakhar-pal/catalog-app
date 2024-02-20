@@ -29,8 +29,12 @@ app.use('/css', (req, res, next) => {
 
 app.use('/catalog', catalogRouter);
 
-app.get("*", function (req, res) {
+app.get('/', (req, res) => {
   res.redirect('/catalog/books');
+})
+
+app.get("*", function (req, res) {
+  res.sendFile(path.join(dirname, "public", "404.html"));
 });
 
 

@@ -35,7 +35,7 @@ async function renderCreateBookForm(req, res) {
     return res.render('catalog/add-book', { authors });
 }
 
-export default {
+export {
     getBooks,
     getBook,
     createBook,

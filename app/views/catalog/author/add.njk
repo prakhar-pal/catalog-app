@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Author</title>
+    <link rel="stylesheet" type="text/css" href="/css/add-author.css" />
+</head>
+<body>
+    <main class='author-app'>
+        <h1>Add an author</h1>
+        <form action="/catalog/author" method="post">
+            <label>
+                    Title
+                    <select name="title">
+                        <option value="Mr.">
+                            Mr.
+                        </option>
+                        <option value="Mrs.">
+                            Mrs.
+                        </option>
+                        <option value="Ms.">
+                            Ms.
+                        </option>
+                        <option value="Mx.">
+                            Mx.
+                        </option>
+                    </select>
+            </label>
+            <hr />
+            <label>
+                    First Name
+                    <input name="firstName" type="text">
+            </label>
+            <hr />
+            <label>
+                    Last Name
+                    <input name="lastName" type="text">
+            </label>
+            <hr />
+            <button type="submit" value="add-book">
+                Add Book
+            </button>
+        </form>
+    </main>
+</body>
+</html>
