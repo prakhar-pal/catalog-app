@@ -1,8 +1,8 @@
 {
-  "name": "impressjs",
+  "name": "catalog-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app/index.js",
   "type": "module",
   "scripts": {
     "start": "USE_EXPRESS=1 nodemon app/index.js",

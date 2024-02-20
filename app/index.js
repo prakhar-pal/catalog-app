@@ -30,7 +30,7 @@ app.use('/css', (req, res, next) => {
 app.use('/catalog', catalogRouter);
 
 app.get("*", function (req, res) {
-  res.sendFile(path.join(dirname, "public", "404.html"));
+  res.redirect('/catalog/books');
 });
 
 
