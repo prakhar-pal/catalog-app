@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/add-book.css" />
+</head>
+<body>
+    <main class='books-app'>
+        <h1>Add a book</h1>
+        <form action="/catalog/book" method="post">
+            <label>
+                    Author
+                    <select name="author">
+                        {% for author in authors %}
+                            <option value="{{ author._id }}">
+                                {{author.title}} {{ author.firstName }} {{ author.lastName}}
+                            </option>
+                        {% endfor %}
+                    </select>
+            </label>
+            <hr />
+            <label>
+                    Book title
+                    <input name="title" type="text">
+            </label>
+            <hr />
+            <button type="submit" value="add-book">
+                Add Book
+            </button>
+        </form>
+    </main>
+</body>
+</html>

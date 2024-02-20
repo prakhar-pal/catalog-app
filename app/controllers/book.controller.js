@@ -1,4 +1,4 @@
-import { Book } from '../models/index.js';
+import { Author, Book } from '../models/index.js';
 import { assert } from '../utils.js';
 
 // @todo - implement the controllers
@@ -23,18 +23,22 @@ async function createBook(req, res) {
         author
     });
     await book.save();
-    return res.json({
-        success: true,
-    });
+    return res.redirect('/catalog/books');
 }
 
 function deleteBook() {
 
 }
 
+async function renderCreateBookForm(req, res) {
+    const authors = await Author.find().exec();
+    return res.render('catalog/add-book', { authors });
+}
+
 export default {
     getBooks,
     getBook,
     createBook,
-    deleteBook
+    deleteBook,
+    renderCreateBookForm,
 }

@@ -3,7 +3,7 @@ import { fileURLToPath } from 'node:url';
 function assert(param, message) {
     if(param && Array.isArray(param)) {
         param.map(p => {
-            if(!!p) {
+            if(!p) {
                 throw new Error(message);
             }
         })

@@ -1,4 +1,4 @@
 {
     "watch": ["app/index.js", "app/"],
-    "ext": "js, css, html"
+    "ext": "js, css, njk"
 }

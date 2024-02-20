@@ -1,5 +1,13 @@
 @import url('/css/common.css');
 
+.heading-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
 .books-table {
     border-collapse: collapse;
     width: 100%;
