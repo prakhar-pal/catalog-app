@@ -7,6 +7,17 @@ function assert(param, message) {
                 throw new Error(message);
             }
         })
+    }else if(param && Object.keys(param).length) {
+        const kv = {...param};
+        const missingKeys = [];
+        for(const [key, value] in Object.entries(kv)) {
+            if(!!value) {
+                missingKeys.push(key);
+            }
+        }
+        if(missingKeys.length) {
+            throw new Error(message);
+        }
     }else if(!!param) {
         throw new Error(message);
     }

@@ -9,7 +9,7 @@
 <body>
     <main class='books-app'>
         <h1>Add a book</h1>
-        <form action="/catalog/book" method="post">
+        <form action="/catalog/book" method="post" class='form'>
             <label>
                     Author
                     <select name="author">
@@ -20,16 +20,14 @@
                         {% endfor %}
                     </select>
             </label>
-            <div>
+            <small>
                 Can't find the author?
                 <a href='/catalog/author/add'>Add Author</a>
-            </div>
-            <hr />
+            </small>
             <label>
                     Book title
                     <input name="title" type="text">
             </label>
-            <hr />
             <button type="submit" value="add-book">
                 Add Book
             </button>

@@ -37,6 +37,17 @@ app.get("*", function (req, res) {
   res.sendFile(path.join(dirname, "public", "404.html"));
 });
 
+app.use(customDefaultErrorHandler);
+
+function customDefaultErrorHandler(err, req, res, next) {
+  if (res.headersSent) {
+    return next(err)
+  }
+  res.status(500);
+  console.log('err', err);
+  res.render('error', { error: err });
+}
+
 
 const PORT = process.env.PORT || 8080;
 try {
