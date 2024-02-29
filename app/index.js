@@ -26,13 +26,11 @@ app.use('/css', (req, res, next) => {
   return impress.static(path.join(dirname, 'public/css'))(req, res, next);
 });
 
-
 app.use('/catalog', catalogRouter);
 
-app.get('/', (req, res) => {
-  res.redirect('/catalog/books');
+app.use('/', (req, res) => {
+  return res.render('homepage.njk');
 })
-
 app.get("*", function (req, res) {
   res.sendFile(path.join(dirname, "public", "404.html"));
 });

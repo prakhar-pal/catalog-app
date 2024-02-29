@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" type="text/css" href="/css/common.css" />
+</head>
+<body>
+    <div class="flex">
+        <sidebar>
+            <a href='/'>Home</a>
+            <a href='/'>Books</a>
+            <a href='/'>Authors</a>
+        </sidebar>
+    </div>
+    <main class='{{ mainClass }}'>
+        {% block mainContent %}
+        {% endblock %}
+    </main>
+
+    {% block footer %}
+    {% endblock %}
+</body>
+</html>
