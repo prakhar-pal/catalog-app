@@ -26,6 +26,10 @@ label {
     max-width: 400px;
 }
 
+a {
+    @apply text-blue-400 underline;
+}
+
 
 
 .table {
