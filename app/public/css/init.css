@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -8,7 +12,7 @@ main, nav {
 }
 
 nav > * {
-    margin-left: 0.5rem;
+    margin-right: 0.5rem;
 }
 
 label {

@@ -6,9 +6,10 @@
   "type": "module",
   "scripts": {
     "start": "node app/index.js",
-    "dev": "USE_EXPRESS=1 nodemon",
+    "dev": "concurrently 'npm run css:watch' 'USE_EXPRESS=1 nodemon app/index.js'",
     "start:impress": "npm start",
-    "build:css": "postcss app/public/css/tailwind-init.css -o app/public/css/tailwind.css"
+    "css": "postcss app/public/css/init.css -o app/public/css/build.css",
+    "css:watch": "npm run css -- --watch"
   },
   "keywords": [],
   "author": "Prakhar Pal <prakharpalpfdr+github@gmail.com>",
