@@ -1,4 +1,5 @@
 {
     "watch": ["app/index.js", "app/"],
-    "ext": "js, css, njk"
+    "ext": "js, css, njk",
+    "exec": "concurrently 'npm run start' 'npm run build:css'"
 }
