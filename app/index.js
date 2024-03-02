@@ -27,9 +27,7 @@ app.use('/css', (req, res, next) => {
   return impress.static(path.join(dirname, 'public/css'))(req, res, next);
 });
 
-app.use('/catalog', catalogRouter);
-
-app.use('/', async (req, res) => {
+app.get('/', async (req, res) => {
   const [
     totalBooks,
     totalBookInstances,
@@ -45,8 +43,13 @@ app.use('/', async (req, res) => {
     totalAuthors
   });
 })
+
+app.use('/catalog', catalogRouter);
+
 app.get("*", function (req, res) {
-  res.sendFile(path.join(dirname, "public", "404.html"));
+  return res.render('error', {
+    error: `404: ${req.url} is not found`
+  });
 });
 
 app.use(customDefaultErrorHandler);
