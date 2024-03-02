@@ -6,6 +6,7 @@ import impress from '../lib/index.js';
 import catalogRouter from './routes/catalog.js';
 import { getCurrentModuleDetails } from './utils.js';
 import './dbSetup.js';
+import { Book, BookInstance, Author } from './models/index.js';
 
 const { dirname, } = getCurrentModuleDetails(import.meta);
 
@@ -28,8 +29,21 @@ app.use('/css', (req, res, next) => {
 
 app.use('/catalog', catalogRouter);
 
-app.use('/', (req, res) => {
-  return res.render('homepage.njk');
+app.use('/', async (req, res) => {
+  const [
+    totalBooks,
+    totalBookInstances,
+    totalAuthors
+  ] = await Promise.all([
+    Book,
+    BookInstance,
+    Author
+  ].map(model => model.find().countDocuments()));
+  return res.render('homepage.njk', {
+    totalBooks,
+    totalBookInstances,
+    totalAuthors
+  });
 })
 app.get("*", function (req, res) {
   res.sendFile(path.join(dirname, "public", "404.html"));

@@ -7,15 +7,15 @@
     <link rel="stylesheet" type="text/css" href="/css/common.css" />
 </head>
 <body>
-    <div class="flex">
+    <nav class="flex">
         <sidebar>
             <a href='/'>Home</a>
-            <a href='/'>Books</a>
-            <a href='/'>Authors</a>
+            <a href='/catalog/books'>Books</a>
+            <a href='/catalog/authors'>Authors</a>
         </sidebar>
-    </div>
+    </nav>
     <main class='{{ mainClass }}'>
-        {% block mainContent %}
+        {% block main %}
         {% endblock %}
     </main>
 

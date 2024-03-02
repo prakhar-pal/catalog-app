@@ -5,32 +5,3 @@
     justify-content: space-between;
     align-items: center;
 }
-
-
-
-.books-table {
-    border-collapse: collapse;
-    width: 100%;
-    border-radius: 4px;
-}
-
-.books-table td,
-.books-table th {
-    border: 1px solid lightblue;
-    padding: 8px;
-}
-
-.books-table tr:nth-child(even) {
-    background-color: lightgray;
-}
-
-.books-table tr:hover {
-    background-color: lightcyan;
-}
-
-.books-table th {
-    padding: 12px;
-    text-align: left;
-    background-color: teal;
-    color: white;
-}

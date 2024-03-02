@@ -1,7 +1,30 @@
-{% extends 'default-template.njk' %}
+{% extends 'layout.njk' %}
 
-{% block mainContent %}
-    <div>
-        Hello World
-        </div>
+{% block main %}
+    <h1>
+        Catalog Details
+    </h1>
+    <table class="table">
+        <tr>
+            <th>
+                type
+            </th>
+            <th>
+                count
+            </th>
+        </tr>
+        <tbody>
+            <tr>
+                <td>Books</td>
+                <td>{{totalBooks}}</td>
+            </tr>
+            <tr>
+                <td>Book Instances</td>
+                <td>{{totalBookInstances}}</td>
+            </tr>
+            <tr>
+                <td>Genre</td>
+                <td>{{totalAuthors}}</td>
+        </tbody>
+    </table>
 {% endblock %}
