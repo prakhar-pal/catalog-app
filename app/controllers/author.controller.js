@@ -1,7 +1,9 @@
 import { Author } from "../models/index.js";
 import { assert } from "../utils.js";
 export function renderAddAuthorForm(req, res) {
-    return res.render('catalog/author/add.njk');
+    return res.render('catalog/author/add.njk', {
+        title: 'Add Author',
+    });
 }
 
 export async function addAuthor(req, res) {

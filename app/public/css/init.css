@@ -1,5 +1,4 @@
 @tailwind base;
-@tailwind components;
 @tailwind utilities;
 
 body {
@@ -57,4 +56,16 @@ a {
     text-align: left;
     background-color: teal;
     color: white;
+}
+
+form {
+    @apply border rounded px-4 py-2;
+}
+
+form input, form select, form button {
+    @apply border px-4 py-2 rounded;
+}
+
+form.form button {
+    @apply bg-blue-800 text-gray-200;
 }

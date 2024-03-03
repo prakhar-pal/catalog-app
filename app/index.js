@@ -38,6 +38,7 @@ app.get('/', async (req, res) => {
     Author
   ].map(model => model.find().countDocuments()));
   return res.render('homepage.njk', {
+    title: 'Homepage',
     totalBooks,
     totalBookInstances,
     totalAuthors
@@ -48,6 +49,7 @@ app.use('/catalog', catalogRouter);
 
 app.get("*", function (req, res) {
   return res.render('error', {
+    title: '404',
     error: `404: ${req.url} is not found`
   });
 });
@@ -60,7 +62,10 @@ function customDefaultErrorHandler(err, req, res, next) {
   }
   res.status(500);
   console.log('err', err);
-  res.render('error', { error: err });
+  res.render('error', {
+    title: 'Something went wrong',
+    error: err
+  });
 }
 
 
