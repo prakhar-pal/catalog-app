@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
-    <link rel="stylesheet" type="text/css" href="/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="/css/build.css" />
+    <link rel="stylesheet" type="text/css" href="/css/tailwind.css" />
 </head>
 <body>
-    <nav class="flex">
-        <sidebar>
-            <a href='/'>Home</a>
-            <a href='/catalog/books'>Books</a>
-            <a href='/catalog/authors'>Authors</a>
-        </sidebar>
+    <nav class="flex bg-slate-900 text-white px-4 py-2 nav [&>a]:no-underline">
+        <a href='/'>Home</a>
+        <a href='/catalog/books'>Books</a>
+        <a href='/catalog/authors'>Authors</a>
     </nav>
-    <main class='{{ mainClass }}'>
+    <main class='main {{ mainClass }}'>
         {% block main %}
         {% endblock %}
     </main>

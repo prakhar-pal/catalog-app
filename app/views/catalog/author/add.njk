@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Author</title>
-    <link rel="stylesheet" type="text/css" href="/css/add-author.css" />
-</head>
-<body>
-    <main class='author-app'>
+{% extends 'layout.njk' %}
+
+{% block main %}
         <h1>Add an author</h1>
         <form action="/catalog/author" method="post" class='form'>
             <label>
@@ -42,6 +35,4 @@
                 Add Book
             </button>
         </form>
-    </main>
-</body>
-</html>
+{% endblock %}

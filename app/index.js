@@ -27,9 +27,7 @@ app.use('/css', (req, res, next) => {
   return impress.static(path.join(dirname, 'public/css'))(req, res, next);
 });
 
-app.use('/catalog', catalogRouter);
-
-app.use('/', async (req, res) => {
+app.get('/', async (req, res) => {
   const [
     totalBooks,
     totalBookInstances,
@@ -40,13 +38,20 @@ app.use('/', async (req, res) => {
     Author
   ].map(model => model.find().countDocuments()));
   return res.render('homepage.njk', {
+    title: 'Homepage',
     totalBooks,
     totalBookInstances,
     totalAuthors
   });
 })
+
+app.use('/catalog', catalogRouter);
+
 app.get("*", function (req, res) {
-  res.sendFile(path.join(dirname, "public", "404.html"));
+  return res.render('error', {
+    title: '404',
+    error: `404: ${req.url} is not found`
+  });
 });
 
 app.use(customDefaultErrorHandler);
@@ -57,7 +62,10 @@ function customDefaultErrorHandler(err, req, res, next) {
   }
   res.status(500);
   console.log('err', err);
-  res.render('error', { error: err });
+  res.render('error', {
+    title: 'Something went wrong',
+    error: err
+  });
 }
 
 

@@ -5,7 +5,10 @@ import { assert } from '../utils.js';
 
 async function getBooks(req, res) {
     const books = await Book.find().populate('author').exec();
-    return res.render('catalog/books', { books });
+    return res.render('catalog/books', {
+        books,
+        title: 'Books',
+    });
 }
 
 
@@ -32,7 +35,10 @@ function deleteBook() {
 
 async function renderCreateBookForm(req, res) {
     const authors = await Author.find().exec();
-    return res.render('catalog/add-book', { authors });
+    return res.render('catalog/add-book', {
+        authors,
+        title: 'Create a new book'
+    });
 }
 
 export {

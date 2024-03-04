@@ -1,16 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="/css/books.css" />
-</head>
+{% extends 'layout.njk' %}
+
+{% block main %}
 <body>
     <main class='books-app'>
-        <div class='heading-container'>
+        <div class='flex items-center mt-4 mb-2'>
             <h1>Here are all available books</h1>
-            <a href='/catalog/book/add'>Add a book</a>
+            <small class="ml-2">
+               (Can't find any books?
+                <a href='/catalog/book/add'>Add a book</a>
+                )
+            </small>
         </div>
         <table class='table'>
             <tr>
@@ -29,6 +28,4 @@
                 </tr>
             {% endfor %}
         </table>
-    </main>
-</body>
-</html>
+{% endblock %}

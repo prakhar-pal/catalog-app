@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="/css/add-book.css" />
-</head>
-<body>
-    <main class='books-app'>
-        <h1>Add a book</h1>
-        <form action="/catalog/book" method="post" class='form'>
+{% extends 'layout.njk' %}
+
+{% block main %}
+    <h1>Add a book</h1>
+        <form method="post" class='form'>
             <label>
                     Author
                     <select name="author">
@@ -32,6 +25,5 @@
                 Add Book
             </button>
         </form>
-    </main>
-</body>
-</html>
+{% endblock %}
+

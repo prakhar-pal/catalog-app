@@ -1,7 +1,1 @@
-@import url('/css/common.css');
-
-.heading-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+@import url('/css/build.css');

@@ -8,7 +8,7 @@ const router = Router();
 
 router.get('/books', asyncHandler(bookController.getBooks));
 router.get('/book/add', asyncHandler(bookController.renderCreateBookForm));
-router.post('/book', asyncHandler(bookController.createBook));
+router.post('/book/add', asyncHandler(bookController.createBook));
 router.get('/book/:bookId', asyncHandler(bookController.getBook));
 router.delete('/book/:bookId', asyncHandler(bookController.deleteBook));
 
